@@ -1,0 +1,32 @@
+$MainC: #000000;
+$SecondC:#fff;
+$Red:#754E4E;
+$Gold:#906E47;
+$Silver:#8E8E8E;
+
+.section7{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto ;
+   img{
+        width: min(70% ,800px);
+    } 
+    h3{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    p{
+        font-size: clamp(16px, 4vw, 22px);
+        width: 70%;
+        margin-inline: auto;
+        
+        a{
+            color: $SecondC;
+            
+        }
+    } 
+
+
+
+}

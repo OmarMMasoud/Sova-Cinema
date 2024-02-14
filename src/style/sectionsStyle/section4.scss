@@ -1,0 +1,62 @@
+$MainC: #000000;
+$SecondC:#fff;
+$Red:#754E4E;
+$Gold:#906E47;
+$Silver:#8E8E8E;
+
+.section4{
+    padding: 2rem 0;
+    .reverse{
+    
+        flex-direction: row-reverse;
+    }
+    .whyus{
+        display: flex;
+        flex-grow: 1;
+         * {
+            flex: 1;
+          }
+    
+    .text{
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+        h2{
+            max-width: 90%;
+            font-weight: bold;
+            font-size: max(2rem ,3vw);
+            margin-inline: auto;
+
+        }
+        p{
+            margin-inline: auto;
+            max-width: 90%;
+            font-size: max(1rem ,1.5vw);
+
+
+        }
+        }
+    }
+
+    @media only screen and (max-width: 950px) {
+        .whyus{
+            flex-direction: column-reverse !important;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            padding: 3.5rem 0;
+            
+        }
+
+        .text{
+            max-width: max(85vw ,350px) !important;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            padding-bottom: 3rem !important;   
+        }
+    }
+        img{
+            width :max(100vw, 20rem) !important;
+        }
+}

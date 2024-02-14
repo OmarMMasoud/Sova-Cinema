@@ -1,0 +1,18 @@
+$MainC: #000000;
+$SecondC:#fff;
+$Red:#754E4E;
+$Gold:#906E47;
+$Silver:#8E8E8E;
+
+
+body{
+    background-color: $MainC;             
+    color: $SecondC;     
+    font-family: "Times New Roman";
+    overflow-x: hidden;       
+}
+
+.bk{
+    background: $MainC;
+    background-image: url(./imgs/background.png);
+}
