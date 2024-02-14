@@ -28,18 +28,18 @@ function Section6() {
         <div className='inputs'>
   
         <input type="text" name="name" placeholder="ВАШЕ ИМЯ" required/>
-        <span class="underline"></span>
+        <span className="underline"></span>
         
         </div>
         <div className='inputs'>
           <input type="tel" name="phone" placeholder="ВАШ ТЕЛЕФОН" required/>
-          <span class="underline"></span>
+          <span className="underlfine"></span>
 
            </div>
         
         <div className='inputs'>
           <textarea name="message" placeholder="СООБЩЕНИЕ" required></textarea>
-          <span class="underline"></span>
+          <span className="underline"></span>
 
         </div>
         <button type='submit'>ОТПРАВИТЬ СООБЩЕНИЕ</button>
