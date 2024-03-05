@@ -5,18 +5,22 @@ $Gold:#906E47;
 $Silver:#8E8E8E;
 
 
+
 .section6{
 display: flex;
 flex-grow: 1;
-> * {
-    flex: 1;
-  }
+      > * {
+          flex: 1;
+        }
 img{
+  position: relative ;
+  flex: 1;
+
 
 }
 .contactForm{
   
-    border: 1px solid green;
+  //  border: 1px solid green;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +28,7 @@ img{
     margin-inline: auto ;
     
   .content{
-    border: 1px solid green;
+  //  border: 1px solid green;
     width: 5rem;
     display: flex;
     flex-direction: column;
@@ -32,69 +36,26 @@ img{
     align-items: center;
     margin-inline: auto ;
     width: 85%;
-    .inputs{
+       
+
+    input{
         display: flex;
         flex-direction: column;
         width: 65%;
+        font-weight:500;
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 18px;
 
-        input::-webkit-input-placeholder {
-            color: #AAA;
-          }
-          
-          input:focus::-webkit-input-placeholder {
-            color: dodgerblue;
-          }
-          
-          .input:focus+.underline {
-            transform: scale(1);
-          }
-          
-          .underline {
-            background-color: dodgerblue;
-            height: 2px;
-            left: 50px;
-            margin-top: -4px;
-            position: absolute;
-            top: 185px;
-            -webkit-transform: scale(0, 1);
-            transform: scale(0, 1);
-            -webkit-transition: all 0.5s linear;
-            transition: all 0.5s linear;
-            width: 202px;
-          }
-        span{
-            
-                background-color: rgb(68, 255, 21);
-                display: inline-block;
-                height: 2px;
-                left: 50px;
-                margin-top: -4px;
-                position: absolute;
-                top: 185px;
-                -webkit-transform: scale(0, 1);
-                transform: scale(0, 1);
-                -webkit-transition: all 0.5s linear;
-                transition: all 0.5s linear;
-                width: 202px;
-              
-        }
-    input{
         margin-bottom: 1rem;
         height: 3rem;
+        border-top:5px;
         border-radius: 6px;
-
-        border: none;
-        border-bottom: 1px solid #CCC;
-        color: #555;
         box-sizing: border-box;
-        font-size: 18px;
-        padding: 10px 0px;
-        position: relative;
-
-        &:focus {
-            outline: none;
-
-        }
+        border: none;
+        box-sizing: border-box;
+        padding: 25px 0px;
+        border-bottom: 5px solid #252423;
+        
         
         &::placeholder{
             text-align: center;
@@ -102,6 +63,7 @@ img{
             justify-content: center;
             color: $MainC;
             opacity: 90%;
+            border: 0 0 1px 0;
         }
     
     }
@@ -110,6 +72,15 @@ img{
         height: 6rem;
         border-radius: 6px;
         resize: none;
+        width: 65%;
+        font-weight:500;
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 18px;
+        border-bottom: 5px solid #252423;
+        
+
+
+
         &::placeholder{
             text-align: center;
             align-items: center;
@@ -121,7 +92,10 @@ img{
         }
         
     }}
+
     h3{
+      align-items: center;
+      text-align: center;
         max-width: 90%;
         font-weight: bold;
         font-size: max(2rem ,3vw);
@@ -143,9 +117,39 @@ img{
         border-radius: 6px;
         background-color: #252423;
         color: $SecondC;
-    }
 
-}}
-
+        &:hover {
+          background-color: $SecondC;
+          color: #252423;
+          transition: 0.4s;
+          font-weight: bold;
+        }
+        &:focus {
+          background-color: $SecondC;
+          color: #252423;
+          transition: 0.4s;
+          font-weight: bold;       }
+      }
+    
 
 }
+@media only screen and (max-width: 950px) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 11rem;
+
+.content{
+  z-index: 5;
+  padding-top: 3rem ;
+  
+}
+img{
+  position: absolute !important;
+  width: 100vw;
+  max-height: 35rem;
+  z-index: 1;
+  filter: grayscale(10%);
+}
+}}
+

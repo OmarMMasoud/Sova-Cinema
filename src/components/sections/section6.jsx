@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import emailjs from 'emailjs-com'
+
+
+//////////////////////// don't send ///////////*************
 
 
 //style
@@ -9,44 +12,42 @@ import "../../style/sectionsStyle/section6.scss"
 //img
 import Img from '../../style/imgs/contactImg.png' 
 
-function Section6() {
-  const form = React.useRef()
+
+export const ContactUs = () => {
+  const form = useRef();
 
   const sendEmail = (e) => {
-    e.preventDefault()
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
-    form.current.reset()
-  }
+    e.preventDefault();
 
-  return (
-    <section className='section6'>
+    emailjs
+      .sendForm('service_1p9el3s', 'template_sova', form.current, {
+        publicKey: 'mGjpmdBrC9NBwqG-v',
+      })
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };  return (
+    <section  id='section6' className='section6'>
+          <form className="contactForm" onSubmit={sendEmail} ref={form}>        <div className="content">
+          <h3>Отправить Сообщение</h3>
+          <p>Мы всегда готовы ответить на любые интересующие Вас вопросы, быстро и полно. Связаться с нами можно любым удобным способом:</p>
 
-      <div className="contactForm" onSubmit={sendEmail} ref={form}>
-       <div className="content"> <h3>Отправить Сообщение</h3>
-        <p>Мы всегда готовы ответить на любые интересующие Вас вопросы, быстро и полно. Связаться с нами можно любым удобным способом:</p>
-        
-        <div className='inputs'>
-  
-        <input type="text" name="name" placeholder="ВАШЕ ИМЯ" required/>
-        <span className="underline"></span>
-        
-        </div>
-        <div className='inputs'>
-          <input type="tel" name="phone" placeholder="ВАШ ТЕЛЕФОН" required/>
-          <span className="underlfine"></span>
-
-           </div>
-        
-        <div className='inputs'>
+          <input type="text" name="name" placeholder="ВАШЕ ИМЯ" required />
+          <input type="tel" name="phone" placeholder="ВАШ ТЕЛЕФОН" required />
           <textarea name="message" placeholder="СООБЩЕНИЕ" required></textarea>
-          <span className="underline"></span>
 
+          <button type='submit' value={"send"}>ОТПРАВИТЬ СООБЩЕНИЕ</button>
         </div>
-        <button type='submit'>ОТПРАВИТЬ СООБЩЕНИЕ</button>
-      </div></div>
+      </form>
       <img src={Img} alt="contact us" />
     </section>
   )
 }
 
-export default Section6
+export default ContactUs

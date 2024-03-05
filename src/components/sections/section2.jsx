@@ -13,6 +13,9 @@ import Img4 from '../../style/imgs/gallery/img4.png'
 import Img5 from '../../style/imgs/gallery/img5.png'
 import Img6 from '../../style/imgs/gallery/img6.png'
 
+//icon
+import { BsFillTriangleFill } from "react-icons/bs";
+
 function Section2() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
@@ -40,14 +43,14 @@ function Section2() {
   }
 
   return (
-    <section className='section2' style={{ position: 'relative' }}>
+    <section className='section2'>
       <div className="bigImg">
-        <button onClick={handlePrevClick} className="prev-button">Previous</button>
+        <button onClick={handlePrevClick} className="prev-button"><BsFillTriangleFill className='icon'/></button>
         <img src={images[currentImageIndex].src} alt={images[currentImageIndex].alt} className='bigImg'/>
-        <button onClick={handleNextClick} className="next-button">Next</button>
+        <button onClick={handleNextClick} className="next-button"><BsFillTriangleFill className='icon'/></button>
       </div>
 
-      <div className="smallImg" style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
+      <div className="smallImg">
       {images.map((image, index) => (
   <img
     key={index}
@@ -55,7 +58,7 @@ function Section2() {
     alt={image.alt}
     onClick={() => handleThumbnailClick(index)}
     className={index === currentImageIndex ? 'active' : ''}
-    style={{ width: '20%', marginRight: '1%', marginBottom: '1%' }}
+    
   />
 ))}
       </div>

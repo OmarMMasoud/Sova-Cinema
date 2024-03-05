@@ -10,7 +10,7 @@ import Nav from '../nav'
 function section1() {
   return (
     
-           <section className='section1'>
+           <section id='section1'className='section1'>
            <Nav/>
    <div className="main">
    <h1>КИНОТЕАТР ДЛЯ ДВОИХ Или ХАЙПОВОЕ МЕСТО ДЛЯ КОМПАНИЙ</h1>

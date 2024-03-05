@@ -3,15 +3,29 @@
     align-items: center;
     justify-content: center;
     margin-inline: auto ;
-    padding: max(1.5rem ,100px) 0;
-    width: max(50%, 400px);
-h2{
+ //   padding: max(1.5rem ,100px) 0;
+    width: clamp(250px ,80%,50% );
+    margin: 8rem auto ;
+    h2{
 font-size: 3.2rem;
-}
+    }
+   
+
 p{
 font-size: 1rem;
+
 }
 
+@media screen and (max-width: 750px) {
+    h2{
+    font-size: calc(32px + 16 * ((100vw - 568px) / (768 - 568)));
+    }
 
+    p{
+    font-weight: 100;      
+    font-size: calc(17px + 8 * ((100vw - 568px) / (768 - 568)));
+  
+    }
+}
 
 }

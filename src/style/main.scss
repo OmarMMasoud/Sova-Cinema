@@ -4,12 +4,16 @@ $Red:#754E4E;
 $Gold:#906E47;
 $Silver:#8E8E8E;
 
-
+:root{
+    scroll-behavior: smooth;
+}
 body{
+    display: inline-block;
     background-color: $MainC;             
     color: $SecondC;     
     font-family: "Times New Roman";
-    overflow-x: hidden;       
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 .bk{
