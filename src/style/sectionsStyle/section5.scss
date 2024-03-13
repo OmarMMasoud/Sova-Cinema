@@ -25,7 +25,7 @@ $Silver:#8E8E8E;
                 cursor: pointer;
                 background: transparent;
                 color: white;
-                font-weight: 900;
+                font-weight: 700;
                 border: 1px;
                 position: relative;
                 text-align: center;
@@ -53,7 +53,15 @@ $Silver:#8E8E8E;
             justify-content: space-around;
             width: 90vw;
             margin-inline: auto ;
-
+            .prices{
+                h5{
+                    text-decoration: line-through;
+                    margin: 0;
+                }
+                h4{
+                    margin-top: 20px;
+                }
+            }
             
             .CoupleCard{
                 width: 30%       
@@ -79,9 +87,9 @@ $Silver:#8E8E8E;
         }
               
         .groupCard{
-        max-width: 55%;                
+        max-width: 45%;                
         margin-inline: auto ;
-        
+       
         h3{
             background-color: $Gold;
             font-size: 1.4rem;
@@ -139,18 +147,24 @@ $Silver:#8E8E8E;
             .price{
                 font-size: 1.5rem;
             }
-            .btn{
+            .buy-button{
+                text-decoration: none;
+                color: #fff;
+            
+            .orderBtn{
                 border-radius: 10px ;
                 padding: 0.5rem 1.25rem;
                 background-color:#1E1E1E ;
-                
+                cursor: pointer;
             
                 &:hover{
                   background-color: white;
                   color: black;  
-                  transition: 1s linear;
+                  transition: 0.5s linear;
                 }
-            }
+
+                }
+                 }
             }
  
 

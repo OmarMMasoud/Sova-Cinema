@@ -1,5 +1,171 @@
-form{
-    background-color: green;
-    margin-top: 2rem;
+$Red:#754E4E;
+$Gold:#906E47;
+$Silver:#8E8E8E;
+$white: rgba(255,255,255,0.15);
 
+.section8{
+    width:100vw;
+    margin-inline: auto;
+    justify-content: center;
+    align-items: center;
+    
+    form{
+        background: $white;
+        border: 2px solid black;
+        border-radius: 50px;
+        align-self: center;
+        margin: 1rem auto;
+        padding-top: 1rem;  
+        justify-content: center;
+        width: clamp(350px, 45vw, 70%);
+        
+        @media (max-width: 768px) {
+              
+            width: 80vw;
+          }
+        
+        h1{
+            text-align: center;
+            margin: 2rem auto 3rem;
+            max-width: fit-content;
+            text-transform: capitalize;
+            transition: all 500ms ease;
+            font-weight: 900;
+            color: #fff;
+            opacity: 0.7;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .userData{
+            width: fit-content;
+            margin-inline: auto ;
+            
+        textarea{
+            resize: none;
+          }
+        .form__input {
+            background: transparent;
+            backdrop-filter: blur(5px);
+            box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+            width: 80%;
+            color: #fff;
+            height: 2.5rem;
+            padding: 0 1.25rem;
+            border: 1px solid $white;
+            width: clamp(120px, 35vw, 420px);
+
+            border-radius: 50px;
+            margin: 0.625rem auto;
+            transition: all 0.2s ease-in-out;
+
+           
+            @media (min-width: 768px) {
+              
+                width: clamp(120px, 35vw, 420px);
+              }
+              
+            &:hover {
+                background: rgba(255,255,255,0.1);
+                box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+              }
+            
+            
+            &:focus {
+              outline: none;
+              border-top-color: rgba(0,0,0,0.1);
+            }
+            
+          &:focus + .form__label, &:not(:placeholder-shown) + .form__label {
+              transform: translateY(-4.50rem) scale(1);
+              color: #ffffff;
+            }
+            
+           &::placeholder {
+                display: none;
+                color: transparent;
+                -webkit-user-select: none; /* Safari */
+                -ms-user-select: none; /* IE 10 and IE 11 */
+                user-select: none; /* Standard syntax */
+            }
+            
+           &:not(:placeholder-shown) {
+              border-top-color: rgba(0, 0, 0, 0.5);
+            }
+          }
+      
+        .form__label {
+            font-size: 1rem;
+            color: grey;
+            display: block;
+            
+           
+          }
+          input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+          }
+          input[type="time"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+          }
+        }
+        
+        hr{
+            width: 80%;
+            opacity: 30%;
+        }
+        .choises{
+            text-align: center;
+            margin-inline:auto ;
+            width: fit-content;
+            margin: 3rem auto;
+        
+            select {
+                
+                appearance: none;
+                /*  safari  */
+                -webkit-appearance: none;
+                /*  other styles for aesthetics */
+                width: 100%;
+                cursor: pointer;
+                outline: none;
+                background: transparent;
+                backdrop-filter: blur(5px);
+                box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+                width: 80%;
+                color: #ffffff;
+                height: 2.5rem;
+                padding: 0 1.25rem;
+                border: 1px solid $white;
+                width: clamp(120px, 35vw, 420px);
+                border-radius: 50px;
+                margin: 0.625rem auto;
+                transition: all 0.2s ease-in-out;
+
+                option{
+                    background: transparent;
+                    color: black;
+                }
+              }
+            
+            .choiceDetails{
+             margin-inline: auto;
+             max-width: 80%;
+            }
+
+            button{
+                padding: 0.8rem 1.8rem;
+                border: none;
+                border-radius: 10px;
+                font-weight: bold;
+                cursor: pointer;
+                border: 0.1px solid transparent;
+
+                &:hover{
+                    color: white;
+                    background-color: black ; 
+                    border: 0.1px solid white;
+                    transition: 0.5s linear ;
+                  } 
+            }
+        }
+    }
 }

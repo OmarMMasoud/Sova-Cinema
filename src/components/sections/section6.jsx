@@ -13,41 +13,38 @@ import "../../style/sectionsStyle/section6.scss"
 import Img from '../../style/imgs/contactImg.png' 
 
 
-export const ContactUs = () => {
+
+const ContactUs = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm('service_1p9el3s', 'template_sova', form.current, {
-        publicKey: 'mGjpmdBrC9NBwqG-v',
-      })
-      .then(
-        (result) => {
+    emailjs.init('agNLWx7R4RhI_m_4O');
+
+    emailjs.sendForm('service_Sova90', 'template_sovaCiema', form.current)
+      .then((result) => {
           console.log(result.text);
-          console.log('SUCCESS!');
-        },
-        (error) => {
+      }, (error) => {
           console.log('FAILED...', error.text);
-        },
-      );
-  };  return (
+      });
+  };
+
+  return (
     <section  id='section6' className='section6'>
-          <form className="contactForm" onSubmit={sendEmail} ref={form}>        <div className="content">
+      <form className="contactForm" onSubmit={sendEmail} ref={form}>
+        <div className="content">
           <h3>Отправить Сообщение</h3>
           <p>Мы всегда готовы ответить на любые интересующие Вас вопросы, быстро и полно. Связаться с нами можно любым удобным способом:</p>
-
           <input type="text" name="name" placeholder="ВАШЕ ИМЯ" required />
-          <input type="tel" name="phone" placeholder="ВАШ ТЕЛЕФОН" required />
-          <textarea name="message" placeholder="СООБЩЕНИЕ" required></textarea>
-
+          <input id="phone" type="tel" name="user_phone" placeholder="ВАШ ТЕЛЕФОН" required />
+          <textarea id="message" type="text" name="message" placeholder="СООБЩЕНИЕ" required></textarea>
           <button type='submit' value={"send"}>ОТПРАВИТЬ СООБЩЕНИЕ</button>
         </div>
       </form>
-      <img src={Img} alt="contact us" />
+      <img src={Img} alt="contact SovaCinema" />
     </section>
-  )
-}
+  );
+};
 
-export default ContactUs
+export default ContactUs;

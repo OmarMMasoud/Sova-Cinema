@@ -22,12 +22,12 @@ function Section2() {
   
   const images = [
   
-    { src: Img1, alt: 'Image 1' },
-    { src: Img2, alt: 'Image 2' },
-    { src: Img3, alt: 'Image 3' },
-    { src: Img4, alt: 'Image 4' },
-    { src: Img5, alt: 'Image 5' },
-    { src: Img6, alt: 'Image 6' },
+    { src: Img1, alt: 'изображения прошлых клиентов' },
+    { src: Img2, alt: 'изображения прошлых клиентов' },
+    { src: Img3, alt: 'изображения прошлых клиентов' },
+    { src: Img4, alt: 'изображения прошлых клиентов' },
+    { src: Img5, alt: 'изображения прошлых клиентов' },
+    { src: Img6, alt: 'изображения прошлых клиентов' },
   ]
 
   const handlePrevClick = () => {
