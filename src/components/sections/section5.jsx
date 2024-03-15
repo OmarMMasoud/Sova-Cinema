@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 import '../../style/main.scss';
 import '../../style/sectionsStyle/section5.scss';
@@ -12,6 +12,7 @@ import FourthPackage from '../../style/imgs/packages/forthPackage.png';
 function Section5(props) {
   const btnRef = React.useRef(null);
   const [selectedChoice, setSelectedChoice] = useState("");
+  const navigate = useNavigate();
 
   const leftClick = () => {
     btnRef.current.style.left = '0px';
@@ -31,7 +32,9 @@ function Section5(props) {
   const toggleDisplayMode = () => {
     setSelectedOption((prevOption) => (prevOption === 0 ? 1 : 0));
   };
-
+  const handleLinkClick = (selectedValue) => {
+    navigate(`/booking?selected=${selectedValue}`);
+  };
   return (
     <section id="section5" className="section5">
       <div className="switchPackages" onClick={toggleDisplayMode}>
@@ -51,7 +54,7 @@ function Section5(props) {
             <div className="price">
               <h4>3900 ₽</h4>
             </div>
-            <a value="РОМАНТИК" href="/booking" className="buy-button">
+            <a  onClick={() => handleLinkClick('РОМАНТИК')} value="РОМАНТИК"  className="buy-button">
               <h4  className="orderBtn">ЗАКАЗАТЬ</h4>
             </a>
           </div>
@@ -65,7 +68,7 @@ function Section5(props) {
               <h4>7200 ₽</h4>
             </div>
 
-            <a value="БЕЗУМНЫЙ ВЕЧЕР" href="/booking" className="buy-button">
+            <a onClick={() => handleLinkClick('БЕЗУМНЫЙ ВЕЧЕР')} value="БЕЗУМНЫЙ ВЕЧЕР" className="buy-button">
               <h4 className="orderBtn" >ЗАКАЗАТЬ</h4>
             </a>
           </div>
@@ -77,7 +80,7 @@ function Section5(props) {
             <div className=" price">
               <h4>12900 ₽</h4>
             </div>
-            <a value="НА ЗВЕЗДАХ" href="/booking" className="buy-button">
+            <a onClick={() => handleLinkClick('НА ЗВЕЗДАХ')} value="НА ЗВЕЗДАХ"  className="buy-button">
               <h4 className="orderBtn">ЗАКАЗАТЬ</h4>
             </a>
           </div>
@@ -90,7 +93,7 @@ function Section5(props) {
           <div className="price">
             <h4>от 2000</h4>
           </div>
-          <a value="КОМПАНИЙ" href="/booking" className="buy-button">
+          <a onClick={() => handleLinkClick('КОМПАНИЙ')} value="КОМПАНИЙ"  className="buy-button">
               <h4 className="orderBtn">ЗАКАЗАТЬ</h4>
             </a>
         </div>

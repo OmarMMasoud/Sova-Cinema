@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../style/sectionsStyle/section8.scss";
 import emailjs from 'emailjs-com';
-import { useHistory } from "react-router-dom";
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 function BookingForm() {
@@ -14,6 +14,10 @@ function BookingForm() {
   const [date, setDate] = useState(" ");
   const [time, setTime] = useState(" ");
   const [selectedChoice, setSelectedChoice] = useState("");
+
+  const location = useLocation();
+const selectedValue = new URLSearchParams(location.search).get('selected');
+const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,32 +41,15 @@ function BookingForm() {
       });
   };
 
-  const handleChoiceChange = (e) => {
-    setChoiceDetails(" ");
+  const handleChoiceChange = (e, selectedValue) => {
+    setChoiceDetails("");
     const choiceValue = e.target.value;
     setChoice(choiceValue);
     setSelectedChoice(choiceValue);
-
-    if (choiceValue === "РОМАНТИК") {
-      setChoiceDetails(
-        "Мы предоставляем в этом пакете: 2 часа увлекательного фильма на ваш выбор, чашку чая, вкусный попкорн, сладости, минеральную воду и свечи для атмосферы. Всё это приятное времяпрепровождение доступно для вас."
-      );
-      setPrice("3900₽");
-    } else if (choiceValue === "БЕЗУМНЫЙ ВЕЧЕР") {
-      setChoiceDetails(
-        "Мы предоставляем в этом пакете: 3 часа захватывающего фильма на ваш выбор, чашку чая, вкусный попкорн, сладости, освежающий сок, свечи для уюта, лепестки роз, ужин на двоих, бутылку шампанского и фруктовую тарелку. Наслаждение этими удивительными деталями доступно для вас."
-      );
-      setPrice("7200₽");
-    } else if (choiceValue === "НА ЗВЕЗДАХ") {
-      setChoiceDetails(
-        "Мы рады предложить вам в этом пакете: 4 часа наслаждения фильмом на ваш выбор, чашку чая, освежающий сок, минеральную воду, свечи для уюта, лепестки роз, букет цветов, ягоды, шоколадное лакомство, бутылку шампанского, вкусный попкорн, ужин на двоих. Наслаждение каждым элементом этого пакета ждет вас."
-      );
-      setPrice("12900₽");
-    } else if (choiceValue === "КОМПАНИЙ") {
-      setChoiceDetails(
-        "Мы предлагаем вам: фильм на ваш выбор, настольные игры (мафия, бункер, дженга) и караоке. Незабываемое время веселья и развлечений гарантировано!"
-      );
-      setPrice("От 3900₽");
+  
+    // Update the URL search parameter
+    if (selectedValue !== choiceValue) {
+      navigate(`/booking?selected=${choiceValue}`);
     }
   };
 
@@ -134,11 +121,11 @@ function BookingForm() {
           <label>
             <span>Выберите Пакет:</span>
             <div className="custom-select">
-              <select
-                className="input"
-                value={choice}
-                onChange={handleChoiceChange}
-              >
+            <select
+              className="input"
+              value={selectedValue }
+              onChange={handleChoiceChange}
+            >
                 <option value="">Выберите Пакет : </option>
                 <option value="РОМАНТИК">РОМАНТИК - 3900₽</option>
                 <option value="БЕЗУМНЫЙ ВЕЧЕР">БЕЗУМНЫЙ ВЕЧЕР - 7200₽</option>
