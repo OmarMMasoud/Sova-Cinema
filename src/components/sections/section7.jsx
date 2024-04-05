@@ -12,7 +12,7 @@ import map from '../../style/imgs/map.png'
 function Section7() {
   return (
 <section className='section7'>
-   <a href="https://yandex.ru/maps/47/nizhny-novgorod/house/nizhne_volzhskaya_naberezhnaya_19/YEoYfw9jQUMGQFtsfX9zdnVgZA==/?ll=43.983861%2C56.327930&z=16.59"> <img href="" src={map} alt="sova location" /></a>
+   <a href="https://yandex.ru/maps/-/CDRONWju"> <img href="" src={map} alt="sova location" /></a>
       <h3>МЫ НА СВЯЗИ!</h3>
       <p>
       Россия,Нижний <br/> НовгородНижневолжская наб., дом 19

@@ -38,8 +38,8 @@ const ContactUs = () => {
           <p>Мы всегда готовы ответить на любые интересующие Вас вопросы, быстро и полно. Связаться с нами можно любым удобным способом:</p>
           <input type="text" name="name" placeholder="ВАШЕ ИМЯ" required />
           <input id="phone" type="tel" name="user_phone" placeholder="ВАШ ТЕЛЕФОН" required />
-          <textarea id="message" type="text" name="message" placeholder="СООБЩЕНИЕ" required></textarea>
-          <button type='submit' value={"send"}>ОТПРАВИТЬ СООБЩЕНИЕ</button>
+          <textarea id="message" type="text" name="message" placeholder="КОММЕНТАРИЙ" required></textarea>
+          <button type='submit' value={"send"}>ОТПРАВИТЬ </button>
         </div>
       </form>
       <img src={Img} alt="contact SovaCinema" />

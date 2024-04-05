@@ -22,9 +22,7 @@ function Nav() {
       <div className="logo">
        <a href="/"> <img src={logo} alt="sova logo" /></a>
       </div>
-      <a className="location">
-        <MdLocationPin /> Нижний Новгород
-      </a>
+     
       <button className="hamburger-menu" onClick={handleNavClick}>
         {navIsVisible ? <SlClose /> : <RiMenu3Fill />}
       </button>

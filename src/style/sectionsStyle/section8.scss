@@ -26,7 +26,18 @@ $white: rgba(255,255,255,0.15);
         
         h1{
             text-align: center;
-            margin: 2rem auto 3rem;
+            margin: 2rem auto 2rem;
+            max-width: fit-content;
+            text-transform: capitalize;
+            transition: all 500ms ease;
+            font-weight: 900;
+            color: #fff;
+            opacity: 0.7;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        h3{
+            text-align: center;
+            margin: 0rem auto 3rem;
             max-width: fit-content;
             text-transform: capitalize;
             transition: all 500ms ease;
@@ -151,6 +162,72 @@ $white: rgba(255,255,255,0.15);
              max-width: 80%;
             }
 
+            .button{
+              padding: 0.8rem 1.8rem;
+              border-radius: 10px;
+              font-weight: bold;
+              cursor: pointer;
+              box-sizing: border-box;
+              background-color: black;
+              color: white;
+              margin: 30px auto;
+              display: block;
+              text-align: center;
+              border: none;
+              text-decoration: none;
+              text-transform: uppercase;
+              width: 12rem;
+              transition: all 0.3s;
+              box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+              &:hover{
+                background-color: white;
+                    color: black ; 
+                    border: 0.1px solid white;
+                    transition: 0.5s linear ;
+              }
+     
+          }
+              .btn{
+                transform-style: preserve-3d;
+                padding: 0.8rem 1.8rem;
+
+                &:before{
+                  content: "отправил";
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  transform-origin: 0% 100%;
+                  transform: rotateX(90deg);
+                  color: white;
+                  background-color: black ;                   
+                  transition: all 10s;
+                  top: -100%;
+                  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+                  padding: 0.8rem 1.8rem;
+                  border-radius: 10px;
+                  font-weight: bold;
+                  cursor: pointer;
+                  box-sizing: border-box;
+                  border: 0.1px white solid transparent;
+
+                }
+                
+                &:focus{
+                  padding: 0.8rem 1.8rem;
+                  border: none;
+                  border-radius: 10px;
+                  font-weight: bold;
+                  cursor: pointer;
+                  border: 0.1px solid transparent;
+                  box-sizing: border-box;
+                  transform-origin: 50% 100%;
+                  transform: rotateX(-90deg) translateY(100%);
+                  color: #000;
+                  border: 0.1px white solid transparent;
+
+                }
+                  
+              }  
             button{
                 padding: 0.8rem 1.8rem;
                 border: none;

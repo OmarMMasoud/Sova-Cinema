@@ -21,7 +21,7 @@ const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     const templateParams = {
       name,
       phone,
@@ -39,6 +39,10 @@ const navigate = useNavigate();
       }, (err) => {
         console.log('FAILED...', err);
       });
+
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
   };
 
   const handleChoiceChange = (e, selectedValue) => {
@@ -57,6 +61,7 @@ const navigate = useNavigate();
     <div className="section8">
       <form onSubmit={handleSubmit}>
         <h1>забронируйте фильм в SovaCinema</h1>
+        <h3>действует предварительная запись минимум за сутки</h3>
 
         <div className="userData">
           <input
@@ -112,7 +117,7 @@ const navigate = useNavigate();
             name="message"
             onChange={(e) => setMessage(e.target.value)}
           />
-          <label htmlFor="message" className="form__label">Сообщение</label>
+          <label htmlFor="message" className="form__label">Комментарий</label>
         </div>
 
         <hr />
@@ -140,7 +145,7 @@ const navigate = useNavigate();
               <p className="choiceDetails">{choiceDetails}</p>
             </div>
           )}
-          <button type="submit">Жду звонка!</button>
+          <button  className="send button btn" type="submit">Забронировать</button>
         </div>
       </form>
     </div>
