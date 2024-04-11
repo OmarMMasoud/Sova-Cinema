@@ -6,12 +6,14 @@ import "../../style/main.scss"
 import "../../style/sectionsStyle/section2.scss"
 
 //imgs
-import Img1 from '../../style/imgs/gallery/img1.png'
-import Img2 from '../../style/imgs/gallery/img2.png'
-import Img3 from '../../style/imgs/gallery/img3.png'
-import Img4 from '../../style/imgs/gallery/img4.png'
-import Img5 from '../../style/imgs/gallery/img5.png'
-import Img6 from '../../style/imgs/gallery/img6.png'
+import Img1 from '../../style/imgs/gallery/img1.jpg'
+import Img2 from '../../style/imgs/gallery/img2.jpg'
+import Img3 from '../../style/imgs/gallery/img3.jpg'
+import Img4 from '../../style/imgs/gallery/img4.jpg'
+import Img5 from '../../style/imgs/gallery/img5.jpg'
+import Img6 from '../../style/imgs/gallery/img6.jpg'
+import Img7 from '../../style/imgs/gallery/img7.jpg'
+import Img8 from '../../style/imgs/gallery/img8.jpg'
 
 //icon
 import { BsFillTriangleFill } from "react-icons/bs";
@@ -28,6 +30,8 @@ function Section2() {
     { src: Img4, alt: 'изображения прошлых клиентов' },
     { src: Img5, alt: 'изображения прошлых клиентов' },
     { src: Img6, alt: 'изображения прошлых клиентов' },
+    { src: Img7, alt: 'изображения прошлых клиентов' },
+    { src: Img8, alt: 'изображения прошлых клиентов' },
   ]
 
   const handlePrevClick = () => {

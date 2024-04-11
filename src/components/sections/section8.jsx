@@ -14,6 +14,8 @@ function BookingForm() {
   const [date, setDate] = useState(" ");
   const [time, setTime] = useState(" ");
   const [selectedChoice, setSelectedChoice] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
 
   const location = useLocation();
 const selectedValue = new URLSearchParams(location.search).get('selected');
@@ -40,9 +42,11 @@ const navigate = useNavigate();
         console.log('FAILED...', err);
       });
 
-      setTimeout(() => {
-        navigate("/");
-      }, 1000);
+       setTimeout(() => {
+        setShowAlert(true);
+        setShowOverlay(true);
+
+      }, 1200);
   };
 
   const handleChoiceChange = (e, selectedValue) => {
@@ -148,6 +152,16 @@ const navigate = useNavigate();
           <button  className="send button btn" type="submit">Забронировать</button>
         </div>
       </form>
+
+      <div className={`overlay ${showOverlay? "show" : ""}`}></div>
+      <div className={`alartMessage ${showAlert? "show" : ""}`}>
+        <div className="content">
+        <h4>Если вы не получили звонок в течение 24 часов, напишите или позвоните нам по этому номеру.</h4>
+        <a href="tel:+7 (831) 423 31 32">+7 (831) 423 31 32</a>        <div className="buttons">
+          <a href="/"><button herf >Главная страница</button></a>
+        <button onClick={() => setShowAlert(false)+setShowOverlay(false)}>Понятно</button>
+        </div></div>
+      </div>
     </div>
   );
 }
