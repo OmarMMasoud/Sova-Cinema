@@ -6,14 +6,24 @@ import "../../style/main.scss"
 import "../../style/sectionsStyle/section2.scss"
 
 //imgs
-import Img1 from '../../style/imgs/gallery/img1.jpg'
-import Img2 from '../../style/imgs/gallery/img2.jpg'
-import Img3 from '../../style/imgs/gallery/img3.jpg'
-import Img4 from '../../style/imgs/gallery/img4.jpg'
-import Img5 from '../../style/imgs/gallery/img5.jpg'
-import Img6 from '../../style/imgs/gallery/img6.jpg'
-import Img7 from '../../style/imgs/gallery/img7.jpg'
-import Img8 from '../../style/imgs/gallery/img8.jpg'
+
+//imgs
+import Img1 from '../../style/imgs/gallery/img1.png'
+import Img2 from '../../style/imgs/gallery/img2.png'
+import Img3 from '../../style/imgs/gallery/img3.png'
+import Img4 from '../../style/imgs/gallery/img4.png'
+import Img5 from '../../style/imgs/gallery/img5.png'
+import Img6 from '../../style/imgs/gallery/img6.png'
+import Img7 from '../../style/imgs/gallery/img7.png'
+import Img8 from '../../style/imgs/gallery/img8.png'
+import Img9 from '../../style/imgs/gallery/img9.png'
+import Img10 from '../../style/imgs/gallery/img10.png'
+import Img11 from '../../style/imgs/gallery/img11.png'
+import Img12 from '../../style/imgs/gallery/img12.png'
+import Img13 from '../../style/imgs/gallery/img13.png'
+import Img14 from '../../style/imgs/gallery/img14.png'
+import Img15 from '../../style/imgs/gallery/img15.png'
+import Img16 from '../../style/imgs/gallery/img16.png'
 
 //icon
 import { BsFillTriangleFill } from "react-icons/bs";
@@ -32,6 +42,14 @@ function Section2() {
     { src: Img6, alt: 'изображения прошлых клиентов' },
     { src: Img7, alt: 'изображения прошлых клиентов' },
     { src: Img8, alt: 'изображения прошлых клиентов' },
+    { src: Img9, alt: 'изображения прошлых клиентов' },
+    { src: Img10, alt: 'изображения прошлых клиентов' },
+    { src: Img11, alt: 'изображения прошлых клиентов' },
+    { src: Img12, alt: 'изображения прошлых клиентов' },
+    { src: Img13, alt: 'изображения прошлых клиентов' },
+    { src: Img14, alt: 'изображения прошлых клиентов' },
+    { src: Img15, alt: 'изображения прошлых клиентов' },
+    { src: Img16, alt: 'изображения прошлых клиентов' },
   ]
 
   const handlePrevClick = () => {
