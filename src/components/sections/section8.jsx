@@ -3,6 +3,10 @@ import "../../style/sectionsStyle/section8.scss";
 import emailjs from 'emailjs-com';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+// icons
+import whatsapp from '../../style/imgs/social/whatsappIcon.svg'
+import telegram from '../../style/imgs/social/telegramIcon.svg'
+
 
 function BookingForm() {
   const [name, setName] = useState(" ");
@@ -24,16 +28,17 @@ const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    const templateParams = {
-      name,
-      phone,
-      message,
-      choice,
-      price,
-      choiceDetails,
-      date,
-      time,
-    };
+  const templateParams = {
+  name,
+  phone,
+  message,
+  choice: selectedChoice,
+  price,
+  choiceDetails,
+  date,
+  time,
+  selectedValue,
+};
 
     emailjs.send('service_Sova90', 'template_booking ', templateParams, 'agNLWx7R4RhI_m_4O')
       .then((response) => {
@@ -46,7 +51,7 @@ const navigate = useNavigate();
         setShowAlert(true);
         setShowOverlay(true);
 
-      }, 1200);
+      }, 1000);
   };
 
   const handleChoiceChange = (e, selectedValue) => {
@@ -55,8 +60,8 @@ const navigate = useNavigate();
     setChoice(choiceValue);
     setSelectedChoice(choiceValue);
   
-    // Update the URL search parameter
-    if (selectedValue !== choiceValue) {
+    // Update the URL search parameter only if the selectedValue is different
+    if (selectedValue!== choiceValue) {
       navigate(`/booking?selected=${choiceValue}`);
     }
   };
@@ -65,7 +70,8 @@ const navigate = useNavigate();
     <div className="section8">
       <form onSubmit={handleSubmit}>
         <h1>забронируйте фильм в SovaCinema</h1>
-        <h3>действует предварительная запись минимум за сутки</h3>
+        <h3>действует предварительная запись минимум за сутки
+</h3>
 
         <div className="userData">
           <input
@@ -104,7 +110,7 @@ const navigate = useNavigate();
           <input
             type="time"
             placeholder="Бронирование времени"
-            className="form__input"
+            className="form__input text-input"
             name="time"
             id="time"
             value={time}
@@ -113,15 +119,14 @@ const navigate = useNavigate();
           <label htmlFor="time" className="form__label">Бронирование времени</label>
 
           <textarea
-            type="input"
-            placeholder="Сообщение"
+            type="text"
             className="form__input"
             id="message"
             value={message}
             name="message"
             onChange={(e) => setMessage(e.target.value)}
           />
-          <label htmlFor="message" className="form__label">Комментарий</label>
+          <label htmlFor="" className="form__label labels">Комментарий</label>
         </div>
 
         <hr />
@@ -156,10 +161,21 @@ const navigate = useNavigate();
       <div className={`overlay ${showOverlay? "show" : ""}`}></div>
       <div className={`alartMessage ${showAlert? "show" : ""}`}>
         <div className="content">
-        <h4>Если вы не получили звонок в течение 24 часов, напишите или позвоните нам по этому номеру.</h4>
-        <a href="tel:+7 (831) 423 31 32">+7 (831) 423 31 32</a>        <div className="buttons">
+        <h4>
+          Если Вам не позвонили
+
+В течение 30 минут
+
+Свяжитесь с нами по телефону: 
+        </h4>
+        <a href="tel:+7 (831) 423 31 32">+7 (831) 423-31-32
+</a>        <div className="buttons">
           <a href="/"><button herf >Главная страница</button></a>
         <button onClick={() => setShowAlert(false)+setShowOverlay(false)}>Понятно</button>
+        <ul class="list-inline ">
+          <li><a href="https://wa.me/79290533132" ><img src={whatsapp} alt="Whatsapp" class="img-responsive"/></a></li>
+          <li><a href="https://t.me/sova_cinema" ><img src={telegram} alt="Telegram" class="img-responsive"/></a></li>
+                        </ul>
         </div></div>
       </div>
     </div>

@@ -12,6 +12,8 @@ import FourthPackage from '../../style/imgs/packages/forthPackage.png';
 function Section5(props) {
   const btnRef = React.useRef(null);
   const [selectedChoice, setSelectedChoice] = useState("");
+  const [selectedPackage, setSelectedPackage] = useState(null); // Add this line
+
   const navigate = useNavigate();
 
   const leftClick = () => {
@@ -33,6 +35,7 @@ function Section5(props) {
     setSelectedOption((prevOption) => (prevOption === 0 ? 1 : 0));
   };
   const handleLinkClick = (selectedValue) => {
+    setSelectedPackage(selectedValue);
     navigate(`/booking?selected=${selectedValue}`);
   };
   return (

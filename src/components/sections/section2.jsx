@@ -30,7 +30,9 @@ import { BsFillTriangleFill } from "react-icons/bs";
 
 function Section2() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  
   
   const images = [
   
@@ -51,26 +53,75 @@ function Section2() {
     { src: Img15, alt: 'изображения прошлых клиентов' },
     { src: Img16, alt: 'изображения прошлых клиентов' },
   ]
-
+  
   const handlePrevClick = () => {
-    setCurrentImageIndex((currentImageIndex - 1 + images.length) % images.length)
+    if (currentImageIndex > 0) {
+      setCurrentImageIndex(currentImageIndex - 1);
+    } else {
+      setCurrentImageIndex(images.length - 1);
+    }
   }
-
+  
   const handleNextClick = () => {
-    setCurrentImageIndex((currentImageIndex + 1) % images.length)
+    if (currentImageIndex < images.length - 1) {
+      setCurrentImageIndex(currentImageIndex + 1);
+    } else {
+      setCurrentImageIndex(0);
+    }
   }
 
   const handleThumbnailClick = (index) => {
     setCurrentImageIndex(index)
+    setIsFullscreen(!isFullscreen)
+  }
+ const handleBigImgClick = (event) => {
+  if (event.target.classList.contains('bigImg') && !event.target.classList.contains('bigImgImg')) {
+    setIsFullscreen(!isFullscreen);
+  }
+}
+
+  const openFullscreen = (element) => {
+    if (element.requestFullscreen) {
+      element.requestFullscreen()
+    } else if (element.webkitRequestFullscreen) {
+      element.webkitRequestFullscreen()
+    } else if (element.msRequestFullscreen) {
+      element.msRequestFullscreen()
+    }
   }
 
+  const closeFullscreen = () => {
+    if (document.exitFullscreen) {
+      document.exitFullscreen()
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen()
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen()
+    }
+    setIsFullscreen(false)
+  }
+  
   return (
     <section className='section2'>
-      <div className="bigImg">
-        <button onClick={handlePrevClick} className="prev-button"><BsFillTriangleFill className='icon'/></button>
-        <img src={images[currentImageIndex].src} alt={images[currentImageIndex].alt} className='bigImg'/>
-        <button onClick={handleNextClick} className="next-button"><BsFillTriangleFill className='icon'/></button>
-      </div>
+
+<div
+  className={`bigImg ${isFullscreen ? 'fullscreen' : ''}`}
+  id='fullscreen-container'
+  style={{ zIndex: 1000 }}
+  onClick={handleBigImgClick}
+>
+  <button onClick={handlePrevClick} className="prev-button"><BsFillTriangleFill className='icon'/></button>
+  <div className="bigImgImg">
+    <img
+      src={images[currentImageIndex].src}
+      alt={images[currentImageIndex].alt}
+      className={`bigImg ${isFullscreen ? 'big' : ''}`}
+    />
+  </div>
+  <button onClick={handleNextClick} className="next-button"><BsFillTriangleFill className='icon'/></button>
+</div>
+
+
 
       <div className="smallImg">
       {images.map((image, index) => (
